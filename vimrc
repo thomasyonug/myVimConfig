@@ -17,12 +17,20 @@ call plug#end()
 
 
 
+
+
 set nocompatible
+autocmd BufNewFile,BufRead *.vue set filetype=javascript.jsx
+
+
+
+
+
+
 
 
 syntax on
 colorscheme onedark
-let g:onedark_termcolors=16
 
 set tabstop=2
 set encoding=UTF-8
@@ -44,6 +52,8 @@ set nofoldenable
 
 
 let g:airline_theme='dark'
+let g:polyglot_disabled = ['vue']
+
 
 
 
