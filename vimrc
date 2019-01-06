@@ -7,6 +7,7 @@ syntax on
 
 
 set tabstop=2
+set encoding=UTF-8
 
 set softtabstop=2
 set shiftwidth=2
@@ -18,12 +19,6 @@ set ruler
 set nrformats=
 
 set lazyredraw
-
-"set cursorline
-"set cursorcolumn
-
-"highlight CursorLine cterm=none ctermbg=240
-"highlight CursorColumn cterm=none ctermbg=240
 
 
 
@@ -38,6 +33,10 @@ call plug#end()
 
 
 
+"NERDTree config
+"let g:NERDTreeDirArrowExpandable = '▸'
+"let g:NERDTreeDirArrowCollapsible = '▾'
+autocmd vimenter * NERDTree
 
 
 
