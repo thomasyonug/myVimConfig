@@ -1,10 +1,23 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'joshdick/onedark.vim'
+Plug 'sheerun/vim-polyglot'
+
+
+call plug#end()
+
+
+
+
+
+
+
 set nocompatible
 
 
-"set term=ansi
 syntax on
-
-
+colorscheme onedark
 
 set tabstop=2
 set encoding=UTF-8
@@ -24,19 +37,12 @@ set lazyredraw
 
 
 
-call plug#begin('~/.vim/plugged')
-
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-
-
-call plug#end()
 
 
 
 "NERDTree config
-"let g:NERDTreeDirArrowExpandable = '▸'
-"let g:NERDTreeDirArrowCollapsible = '▾'
 autocmd vimenter * NERDTree
+let NERDTreeWinPos=1
 
 
 
