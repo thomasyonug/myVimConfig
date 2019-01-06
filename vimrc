@@ -1,7 +1,7 @@
 set nocompatible
 
 
-set term=color_xterm
+"set term=ansi
 syntax on
 
 
@@ -17,7 +17,31 @@ set incsearch
 set ruler
 set nrformats=
 
-set cursorline
-set cursorcolumn
-highlight CursorLine cterm=none ctermbg=240
-highlight CursorColumn cterm=none ctermbg=240
+set lazyredraw
+
+"set cursorline
+"set cursorcolumn
+
+"highlight CursorLine cterm=none ctermbg=240
+"highlight CursorColumn cterm=none ctermbg=240
+
+
+
+
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+
+call plug#end()
+
+
+
+
+
+
+
+
+
+
