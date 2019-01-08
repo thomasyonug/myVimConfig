@@ -23,6 +23,7 @@ Plug 'marijnh/tern_for_vim'
 
 "git
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -40,6 +41,8 @@ autocmd BufNewFile,BufRead *.vue set filetype=javascript.jsx
 
 
 
+"gitgutter
+autocmd BufWritePost * GitGutter
 
 
 
