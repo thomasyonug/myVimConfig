@@ -10,11 +10,10 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
-"Plug 'tpope/vim-obsession'
-"Plug 'dhruvasagar/vim-prosession'
 Plug 'Raimondi/delimitMate'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdcommenter'
 
 
 Plug 'Valloric/MatchTagAlways'
@@ -63,6 +62,7 @@ set nrformats=
 set cursorline
 
 set lazyredraw
+set ttyfast
 set nowrap
 set foldmethod=syntax
 set nofoldenable
@@ -91,6 +91,8 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue'
 autocmd vimenter * NERDTree
 let NERDTreeWinPos=1
 
+
+let mapleader=" "
 
 
 
