@@ -14,6 +14,9 @@ Plug 'Raimondi/delimitMate'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdcommenter'
+Plug 'rking/ag.vim'
+Plug 'brooth/far.vim'
+
 
 
 Plug 'Valloric/MatchTagAlways'
@@ -67,7 +70,7 @@ set nowrap
 set foldmethod=syntax
 set nofoldenable
 set noshowmode
-set scrolloff=3
+set scrolloff=5
 
 
 
