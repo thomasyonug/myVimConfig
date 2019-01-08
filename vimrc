@@ -10,17 +10,22 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
-Plug 'tpope/vim-obsession'
-Plug 'dhruvasagar/vim-prosession'
+"Plug 'tpope/vim-obsession'
+"Plug 'dhruvasagar/vim-prosession'
 Plug 'Raimondi/delimitMate'
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 
 Plug 'Valloric/MatchTagAlways'
 Plug 'alvan/vim-closetag'
 Plug 'marijnh/tern_for_vim'
 
+"git
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
+
 
 
 
@@ -51,13 +56,15 @@ set number
 set hlsearch
 set incsearch
 
-set ruler
 set nrformats=
+set cursorline
 
 set lazyredraw
 set nowrap
 set foldmethod=syntax
 set nofoldenable
+set noshowmode
+set scrolloff=3
 
 
 
