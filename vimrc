@@ -96,6 +96,8 @@ let g:airline_theme='dark'
 let g:polyglot_disabled = ['vue']
 set completeopt-=preview
 
+let g:tagbar_left=1
+
 
 let g:mta_filetypes = {
     \ 'html' : 1,
