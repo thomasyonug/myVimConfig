@@ -17,17 +17,23 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'rking/ag.vim'
 Plug 'brooth/far.vim'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'mhinz/vim-startify'
 Plug 'majutsushi/tagbar'
  
 
 Plug 'Valloric/MatchTagAlways'
 Plug 'alvan/vim-closetag'
-Plug 'marijnh/tern_for_vim'
 
 "git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
+
+
+"ecmascript
+Plug 'marijnh/tern_for_vim'
+Plug 'w0rp/ale'
+
 
 call plug#end()
 
@@ -40,7 +46,17 @@ call plug#end()
 
 set nocompatible
 set backspace=indent,eol,start
+
 autocmd BufNewFile,BufRead *.vue set filetype=javascript.jsx
+let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
+let g:ale_linters = {
+	\   'vue': ['eslint', 'vls'],
+	\   'javascript': ['eslint'],
+	\}
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
 
 
@@ -93,8 +109,13 @@ let g:mta_filetypes = {
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue'
 
 "NERDTree config
-autocmd vimenter * NERDTree
 let NERDTreeWinPos=1
+autocmd VimEnter *
+	\   if !argc()
+	\ |   Startify
+	\ |   NERDTree
+	\ |   wincmd w
+
 
 
 let mapleader=" "
@@ -122,5 +143,17 @@ if !isdirectory(s:vim_tags)
    silent! call mkdir(s:vim_tags, 'p')
 endif
 
+"startify config
+let g:startify_custom_header = [
+			\'   __  __                                        __  __                   __                                 ',
+			\'  /\ \/\ \                                      /\ \/\ \                 /\ \      __                        ',
+			\'  \ \ \_\ \     __     _____   _____   __  __   \ \ \_\ \     __      ___\ \ \/''\/\_\    ___      __        ',
+			\'   \ \  _  \  /''__`\  /\''__`\/\''__`\/\ \/\ \  \ \  _  \  /''__`\  /''__\ \   < \/\ \ /'' _`\  /''_`\      ',
+			\'    \ \ \ \ \/\ \L\.\_\ \ \L\ \ \ \L\ \ \ \_\ \   \ \ \ \ \/\ \L\.\_/\ \__/\ \ \\`\\ \ \/\ \/\ \/\ \L\ \     ',
+			\'     \ \_\ \_\ \__/.\_\\ \  __/\ \  __/\/`____ \   \ \_\ \_\ \__/.\_\ \____\\ \_\ \_\ \_\ \_\ \_\ \____ \    ',
+			\'      \/_/\/_/\/__/\/_/ \ \ \/  \ \ \/  `/___/> \   \/_/\/_/\/__/\/_/\/____/ \/_/\/_/\/_/\/_/\/_/\/___L\ \   ',
+			\'                          \ \_\   \ \_\     /\___/                                                  /\____/  ',
+			\'                           \/_/    \/_/     \/__/                                                   \_/__/   ',
+			\ ]
 
 
