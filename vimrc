@@ -173,6 +173,8 @@ let mapleader=" "
 :nnoremap <leader>tt :TagbarToggle<CR>
 " save
 :nnoremap <leader>s :w<CR>
+" buffer search
+:nnoremap <leader>f :silent execute ":AgBuffer!" . shellescape(expand("<cWORD>"))<cr>
 
 :nnoremap <leader>l >>
 :nnoremap <leader>h <<
