@@ -166,8 +166,8 @@ let g:startify_custom_header = [
 " map
 let mapleader=" "
 " terminal
-:nnoremap <leader>t :below ter ++rows=20<CR> 
+:nnoremap <leader>te :below ter ++rows=20<CR> 
 " file tree
-:nnoremap <leader>f :NERDTreeToggle<CR>
+:nnoremap <leader>tr :NERDTreeToggle<CR>
 " tagbar
-:nnoremap <leader>b :TagbarToggle<CR>
+:nnoremap <leader>tt :TagbarToggle<CR>
