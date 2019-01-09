@@ -66,6 +66,8 @@ endif
 
 "gitgutter
 autocmd BufWritePost * GitGutter
+set updatetime=100
+
 
 
 
