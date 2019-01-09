@@ -59,6 +59,9 @@ highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
 
+if has("autocmd")
+	autocmd! bufwritepost vimrc source $MYVIMRC
+endif
 
 
 "gitgutter
@@ -120,7 +123,6 @@ autocmd VimEnter *
 
 
 
-let mapleader=" "
 
 
 
@@ -159,3 +161,12 @@ let g:startify_custom_header = [
 			\ ]
 
 
+
+" map
+let mapleader=" "
+" terminal
+:nnoremap <leader>t :below ter ++rows=20<CR> 
+" file tree
+:nnoremap <leader>f :NERDTreeToggle<CR>
+" tagbar
+:nnoremap <leader>b :TagbarToggle<CR>
