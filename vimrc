@@ -171,3 +171,11 @@ let mapleader=" "
 :nnoremap <leader>tr :NERDTreeToggle<CR>
 " tagbar
 :nnoremap <leader>tt :TagbarToggle<CR>
+" save
+:nnoremap <leader>s :w<CR>
+
+:nnoremap <leader>l >>
+:nnoremap <leader>h <<
+
+
+
