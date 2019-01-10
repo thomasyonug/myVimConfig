@@ -194,6 +194,9 @@ function! s:AgOperator(type)
 		let @@ = saved_unnamed_register
 endfunction
 
+
+
+
 nnoremap <leader>l >>
 nnoremap <leader>h <<
 
