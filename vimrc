@@ -166,18 +166,36 @@ let g:startify_custom_header = [
 " map
 let mapleader=" "
 " terminal
-:nnoremap <leader>te :below ter ++rows=20<CR> 
+nnoremap <leader>te :below ter ++rows=20<CR> 
 " file tree
-:nnoremap <leader>tr :NERDTreeToggle<CR>
+nnoremap <leader>tr :NERDTreeToggle<CR>
 " tagbar
-:nnoremap <leader>tt :TagbarToggle<CR>
+nnoremap <leader>tt :TagbarToggle<CR>
 " save
-:nnoremap <leader>s :w<CR>
-" buffer search
-:nnoremap <leader>f :silent execute ":AgBuffer!" . shellescape(expand("<cWORD>"))<cr>
+nnoremap <leader>s :w<CR>
 
-:nnoremap <leader>l >>
-:nnoremap <leader>h <<
+" buffer search
+nnoremap <leader>f :silent execute ":AgBuffer!" . shellescape(expand("<cWORD>"))<cr>
+vnoremap <leader>f :<C-U>call <SID>AgOperator(visualmode())<CR>
+function! s:AgOperator(type)
+		let saved_unnamed_register = @@
+
+    if a:type ==# 'v'
+        normal! `<v`>y
+    elseif a:type ==# 'char'
+        normal! `[v`]y
+    else
+
+    endif
+
+    silent execute "AgBuffer!" . shellescape(@@)
+    copen
+
+		let @@ = saved_unnamed_register
+endfunction
+
+nnoremap <leader>l >>
+nnoremap <leader>h <<
 
 
 
