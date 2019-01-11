@@ -9,7 +9,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 Plug 'Raimondi/delimitMate'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -101,6 +101,7 @@ let g:polyglot_disabled = ['vue']
 set completeopt-=preview
 
 let g:tagbar_left=1
+let g:tagbar_autofocus = 1
 
 
 let g:mta_filetypes = {
