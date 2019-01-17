@@ -9,7 +9,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --clang-completer' }
 Plug 'Raimondi/delimitMate'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -32,7 +32,7 @@ Plug 'junegunn/gv.vim'
 
 "ecmascript
 Plug 'marijnh/tern_for_vim'
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 
 
 call plug#end()
@@ -93,6 +93,14 @@ set foldmethod=syntax
 set nofoldenable
 set noshowmode
 set scrolloff=5
+
+
+
+let g:ycm_min_num_identifier_candidate_chars = 2
+let g:ycm_semantic_triggers =  {
+			\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+			\ 'cs,lua,javascript': ['re!\w{2}'],
+			\ }
 
 
 
@@ -169,14 +177,13 @@ let mapleader=" "
 " terminal
 nnoremap <leader>te :below ter ++rows=20<CR> 
 " file tree
-nnoremap <leader>tr :NERDTreeToggle<CR>
+nnoremap <leader>tr :NERDTreeFocus<CR>
 " tagbar
 nnoremap <leader>tt :TagbarToggle<CR>
 " save
 nnoremap <leader>s :w<CR>
-
 " buffer search
-nnoremap <leader>f :silent execute ":AgBuffer!" . shellescape(expand("<cWORD>"))<cr>
+nnoremap <leader>f :silent execute "AgBuffer! " . shellescape(expand("<cWORD>"))<CR>
 vnoremap <leader>f :<C-U>call <SID>AgOperator(visualmode())<CR>
 function! s:AgOperator(type)
 		let saved_unnamed_register = @@
@@ -194,9 +201,6 @@ function! s:AgOperator(type)
 
 		let @@ = saved_unnamed_register
 endfunction
-
-
-
 
 nnoremap <leader>l >>
 nnoremap <leader>h <<
