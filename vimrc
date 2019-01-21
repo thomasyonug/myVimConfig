@@ -205,5 +205,8 @@ endfunction
 nnoremap <leader>l >>
 nnoremap <leader>h <<
 
+" go to defination
+nnoremap <leader>gd <C-]>
+
 
 
