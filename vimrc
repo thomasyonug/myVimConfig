@@ -210,6 +210,7 @@ nnoremap <leader>gd <C-]>
 
 " binary display
 nnoremap <leader>2 :%!xxd<CR>
+nnoremap <leader>0 :%!xxd -r<CR>
 
 
 
