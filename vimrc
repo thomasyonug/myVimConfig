@@ -208,5 +208,8 @@ nnoremap <leader>h <<
 " go to defination
 nnoremap <leader>gd <C-]>
 
+" binary display
+nnoremap <leader>2 :%!xxd<CR>
+
 
 
