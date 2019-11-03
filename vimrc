@@ -34,6 +34,7 @@ Plug 'junegunn/gv.vim'
 Plug 'marijnh/tern_for_vim'
 "Plug 'w0rp/ale'
 
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
@@ -212,5 +213,7 @@ nnoremap <leader>gd <C-]>
 nnoremap <leader>2 :%!xxd<CR>
 nnoremap <leader>0 :%!xxd -r<CR>
 
+nmap <leader>mf <Plug>(easymotion-s2)
+nmap <leader>mw <leader><leader>w
 
 
